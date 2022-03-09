@@ -123,7 +123,7 @@ public class mainController {
 
         operator = "";
         history.setText("");
-        Model.memory = 0;
+        Model.setMemory(0);
         start = true;
         result.setText("0");
         logs("Calculator data cleared\n");
@@ -139,11 +139,11 @@ public class mainController {
         operator = value;
         number1 = Float.parseFloat(result.getText());
         result.setText("0");
-        float mem = Model.memory;
-        float output = model.calculateMem(number1, operator);
+        double mem = Model.getMemory();
+        double output = model.calculateMem(number1, operator);
 
         if (operator.equals("MR")) {
-            logs("In memory: " + Model.memory);
+            logs("In memory: " + Model.getMemory());
         } else {
             logs("Memory operation, In memory " + mem + ", operation " +
                     operator + ", number: " + number1 + ", equals: " + output);

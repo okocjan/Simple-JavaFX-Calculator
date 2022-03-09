@@ -1,7 +1,15 @@
 package com.example.demo;
 
 public class Model {
-    public static float memory = 0;
+    private static double memory = 0;
+
+    public static double getMemory() {
+        return memory;
+    }
+
+    public static void setMemory(float memory) {
+        Model.memory = memory;
+    }
 
     public float calculateBin(float number1, float number2, String operator) {
         switch (operator) {
@@ -51,7 +59,7 @@ public class Model {
         }
     }
 
-    public float calculateMem(float number1, String operator) {
+    public double calculateMem(float number1, String operator) {
         switch (operator) {
             case "M+":
                 memory += number1;
